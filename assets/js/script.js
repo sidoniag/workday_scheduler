@@ -1,5 +1,8 @@
 var tasks = {};
 
+$("<textarea>").addClass("time-block row .btn");
+console.log();
+
 var createTask = function(taskText, taskDate, taskList) {
   // create elements that make up a task item
   var taskLi = $("<textarea>").addClass("row time-block");
