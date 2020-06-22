@@ -36,12 +36,10 @@ function createTask(time) {
 	inputGroupEl.append(inputGroupPreEl, taskEl, inputGroupAppEl);
 	containerEl.append(inputGroupEl);
 
-	// pass current hour block and event block
-	//styleEventColor(hour, eventEl);
 }
 
 // save tasks
-$("#saveBtn").on('click', saveTask);
+
 
 var taskArr = loadTask() || [];
 
@@ -62,7 +60,9 @@ function saveTask() {
     }
 
     taskArr.push(taskObj);
-  }
+  };
+
+  $("#saveBtn").on("click","span", saveTask());
 }
 
 
