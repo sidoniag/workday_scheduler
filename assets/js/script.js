@@ -39,17 +39,47 @@ function createTask(time) {
 	// pass current hour block and event block
 	//styleEventColor(hour, eventEl);
 }
-var saveTasks = function() {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-// save tasks
-$(".saveBtn").on("click", saveTask);
 
-  var text = $(this)
+// save tasks
+$("#saveBtn").on('click', saveTask);
+
+var taskArr = loadTask() || [];
+
+function saveTask() {
+  var taskText = $(this)
+    .parent()
     .val()
     .trim();
 
-
+  var taskObj = {
+    id : $(this).attr("data-id"),
+    taskText : taskText
+  };
   
-    };    
+  for (var i = 0; i < taskArr.length; i++) {
+    if (taskArr[i].id === taskObj.id) {
+      taskArr.splice(i,1);
+    }
 
-createTask();
+    taskArr.push(taskObj);
+  }
+}
+
+
+
+localStorage.setItem("task", JSON.stringify(taskArr));
+
+function loadTask() {
+  var task = localStorage.getItem("task");
+  task = JSON.parse(task);
+  console.log(task);
+
+  if (!task) {
+    return false;
+  }
+
+  for (var i = 0; i < task.length; i++) {
+    $('.form-control[data-id="' + task[i].id + '"]').val(task[i].taskText);
+  }
+  return task;
+}
