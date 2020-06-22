@@ -10,4 +10,4 @@ Moment.js
 Deployment:
 <https://sidoniag.github.io/workday_scheduler/>
 
-<image src="placeholder">
+<image src="chrome-extension://fdpohaocaechififmbbbbbknoalclacl/capture.html?id=6&url=file%3A%2F%2F%2FUsers%2Fidonia%2FDesktop%2Fprojects%2Fworkday_scheduler%2Findex.html">
