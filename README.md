@@ -8,5 +8,6 @@ JQuery
 Moment.js
 
 Deployment:
+<https://sidoniag.github.io/workday_scheduler/>
 
 <image src="">
