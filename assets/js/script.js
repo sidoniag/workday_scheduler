@@ -62,7 +62,7 @@ function saveTask() {
     taskArr.push(taskObj);
   };
 
-  $("#saveBtn").on("click","span", saveTask());
+  $(".saveBtn").on("click","span", saveTask());
 }
 
 
